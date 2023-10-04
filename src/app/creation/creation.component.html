@@ -1,0 +1,46 @@
+<div class="bg-zinc-800/20 justify-center items-center">
+  <ng-container *ngIf="myForm">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="grid">
+        <app-form-input
+          class="grid-cols-1"
+          [formGroup]="myForm"
+          formControlName="lastName"
+          placeholder="Last Name"
+          label="Last Name"
+          errorMessage="Please provide a name."
+        />
+        <app-form-input
+          class="grid-cols-2"
+          [formGroup]="myForm"
+          formControlName="firstName"
+          placeholder="Last Name"
+          label="Last Name"
+          errorMessage="Please provide a name."
+        />
+        <app-form-dropdown
+          [formGroup]="myForm"
+          formControlName="status"
+          label="Select status"
+          [values]="status"
+          [defaultValue]="status[0]"
+          errorMessage="Please provide a name."
+        />
+        <app-form-dropdown
+          [formGroup]="myForm"
+          formControlName="occupation"
+          label="Select Occupation"
+          [values]="occupations"
+          [defaultValue]="occupations[0]"
+          errorMessage="Please provide a name.">
+        </app-form-dropdown>
+      </div>
+      <div class="flex">
+        <button type="submit" [disabled]="myForm.invalid">Send</button>
+        <ng-container *ngIf="modalView">
+          <button type="button" (click)="closeModal()">Cancel</button>
+        </ng-container>
+      </div>
+    </form>
+  </ng-container>
+</div>

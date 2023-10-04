@@ -1,0 +1,17 @@
+<div>
+  <label class="label-container">
+    {{label}}</label>
+  <div class="body">
+    <input
+      class="input"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      (input)="onChange(value)"
+      [(ngModel)]="value"
+    >
+  </div>
+  <div class="error-message"
+       *ngIf="showError()">
+    {{errorMessage}}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+@import '@angular/cdk/overlay-prebuilt.css'; /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .label-container {
+    @apply gap-1 text-zinc-600 text-base font-light px-2;
+  }
+}
+
+.field-container {
+  @apply flex flex-col gap-2 w-full h-fit disabled:opacity-30;
+}
+
+.error-message {
+  @apply w-full h-fit text-red-600 text-sm px-2;
+}
+
+.overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 1px;
+}
+
+button {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded
+}

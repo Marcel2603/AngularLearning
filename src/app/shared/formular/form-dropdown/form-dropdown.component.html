@@ -1,0 +1,17 @@
+<div>
+  <label class="label-container">{{label}}</label>
+  <div
+    class="flex w-full  items-center gap-2 rounded-full duration-300 focus-within:ring-2 focus-within:ring-offset-1 focus-within:ring-zinc-200"
+  >
+    <select
+      [(ngModel)]="value"
+      [disabled]="disabled"
+      class="bg-zinc-900 px-6 py-3 rounded-full text-amber-50 text-sm dark:text-white flex flex-start flex-col items-center p-1.5 cursor-pointer duration-300 overflow-y-scroll">
+      <option class="rounded-full" *ngFor="let value of values" [value]="value">{{value}}</option>
+    </select>
+  </div>
+  <div class="error-message"
+       *ngIf="showError()">
+    {{errorMessage}}
+  </div>
+</div>

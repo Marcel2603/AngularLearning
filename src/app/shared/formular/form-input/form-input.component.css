@@ -1,0 +1,7 @@
+.body {
+  @apply flex w-full px-6 py-3 items-center gap-2 rounded-full bg-zinc-100 duration-300 focus-within:ring-2 focus-within:ring-offset-1 focus-within:ring-zinc-200
+}
+
+.input {
+  @apply w-full text-sm font-light text-zinc-800 placeholder:text-zinc-400 bg-transparent outline-none truncate autofill:bg-transparent
+}
